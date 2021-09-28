@@ -45,19 +45,13 @@ calculate_temp2 d3(
 );
 
 // For the right rotates
-wire [31:0] w_i_minus_15;
-wire [31:0] w_i_minus_2;
-
-assign w_i_minus_15 = w[i-15];
-assign w_i_minus_2  = w[i- 2];
-
 calculate_s0 d0(
-	.w_i_minus_15(w_i_minus_15),
+	.w_i_minus_15(w[i-15]),
 	.s0(s0)
 );
 
 calculate_s1 d1(
-	.w_i_minus_2(w_i_minus_2),
+	.w_i_minus_2(w[i-2]),
 	.s1(s1)
 );
 
@@ -121,7 +115,7 @@ always_ff @(posedge clk) begin
 
 			// populate the first 16 elements of w in 1 clock cycle
 			for (j = 0; j < 16; j++) begin
-				w[j] <= chunk[j*32+32-:32]; // endian might be wrong, watch out
+				w[15-j] <= chunk[j*32+:32]; // endian might be wrong, watch out
 			end
 		end
 
@@ -135,7 +129,8 @@ always_ff @(posedge clk) begin
 			// s0 and s1 are determined combinationally in other module
 			w[i] <= w[i-16] + s0 + w[i-7] + s1;
 
-			if (i == 8'hFF) begin
+			if (i == 63) begin
+				i <= 0;
 				state <= CALC_TEMP;
 
 				// set a to h for calc_temp operations
@@ -154,7 +149,6 @@ always_ff @(posedge clk) begin
 
 		// temp1, temp2 are computed combinationally so this is less necessary
 		CALC_TEMP: begin
-			i <= 0;
 			state <= SHIFT_VALS;
 		end
 
@@ -168,7 +162,7 @@ always_ff @(posedge clk) begin
 			b <= a;
 			a <= temp1+temp2;
 
-			if (i == 8'hFF) begin
+			if (i == 63) begin
 				state <= UPDATE_HASH;
 			end else begin
 				i <= i + 1'b1;

@@ -96,7 +96,7 @@ def process_chunk(hv, k, preprocessed):
 
 
 ob = pre_process(bytearray(ex, encoding="utf-8"))
-print (ob)
+print(''.join("{:02x}".format(x) for x in ob))
 l = process_chunk(hv, k, ob)
 
 
