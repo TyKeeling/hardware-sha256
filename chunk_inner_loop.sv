@@ -1,5 +1,5 @@
 module chunk_inner_loop(
-	input logic chunk[512], output logic hash[256],
+	input logic [511:0]chunk, output logic [255:0]hash,
 	input logic valid, reset, clk,
 	output logic ready
 );
@@ -27,7 +27,7 @@ reg [31:0] f;
 reg [31:0] g;
 reg [31:0] h;
 
-calculate_temp1(
+calculate_temp1 d2(
 	.e(e),
 	.f(f),
 	.g(g),
@@ -37,7 +37,7 @@ calculate_temp1(
 	.temp1(temp1)
 );
 
-calculate_temp2(
+calculate_temp2 d3(
 	.a(a),
 	.b(b),
 	.c(c),
@@ -63,8 +63,19 @@ calculate_s1 d1(
 
 assign ready = (state == START);
 
-// initialize values of k, hv, when reset 
-always_ff(posedge clk) begin
+assign hash = {
+	hv[7],
+	hv[6],
+	hv[5],
+	hv[4],
+	hv[3],
+	hv[2],
+	hv[1],
+	hv[0]
+};
+
+// initialize values of k, hv, when reset
+always_ff @(posedge clk) begin
 	if (reset) begin
 		k <= {
 			'h428a2f98, 'h71374491, 'hb5c0fbcf, 'he9b5dba5, 'h3956c25b, 'h59f111f1, 'h923f82a4, 0'hab1c5ed5,
@@ -85,49 +96,33 @@ always_ff(posedge clk) begin
 			'h510e527f,
 			'h9b05688c,
 			'h1f83d9ab,
-			'h5be0cd19,	
+			'h5be0cd19
 		};
 	end
 end
 
+integer j;
+
 // FSM Traversal
-always_ff(posedge clk) begin
+always_ff @(posedge clk) begin
 	if (reset) begin
 		state <= START;
-		
-		genvar j;
-		generate
-		for (j = 0; j < 64; j++) begin
+
+		for (j = 0; j < 64; j++) begin : zero_w
 			w[j] <= 32'b0; // zero all elements of w in 1 clock cycle
 		end
-		endgenerate
 
 		i <= 16;
 	end
 
-	else begin case(state)
+	else case(state)
 		START: if (valid) begin
 			state <= CAPTURE_CHUNK;
 
 			// populate the first 16 elements of w in 1 clock cycle
-			genvar j;
-			generate
 			for (j = 0; j < 16; j++) begin
-				w[j] <= chunk[j*32+:32] // endian might be wrong, watch out
+				w[j] <= chunk[j*32+32-:32]; // endian might be wrong, watch out
 			end
-			endgenerate
-
-		end else begin
-			hash <= {
-				hv[7],
-				hv[6],
-				hv[5],
-				hv[4],
-				hv[3],
-				hv[2],
-				hv[1],
-				hv[0]
-			}
 		end
 
 		// This can be removed but my state machine needs more states
@@ -137,9 +132,9 @@ always_ff(posedge clk) begin
 
 		CALC_WI: begin
 
-			// s0 and s1 are determined combinationally in other module 
-			w[i] <= w[i-16] + s0 + w[i-7] + s1
-		
+			// s0 and s1 are determined combinationally in other module
+			w[i] <= w[i-16] + s0 + w[i-7] + s1;
+
 			if (i == 8'hFF) begin
 				state <= CALC_TEMP;
 
@@ -191,10 +186,9 @@ always_ff(posedge clk) begin
 			hv[6] <= hv[6] + g;
 			hv[7] <= hv[7] + h;
 
-			state <= start;
+			state <= START;
 		end
-
-	end
+	endcase
 end
 
 endmodule
