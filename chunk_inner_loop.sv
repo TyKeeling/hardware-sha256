@@ -8,6 +8,7 @@ enum {START, CAPTURE_CHUNK, CALC_WI, CALC_TEMP, SHIFT_VALS, UPDATE_HASH} state;
 
 reg [5:0] i; // counts up to 63
 
+// k and w are inverted
 reg [31:0] k [63:0]; // 32-bit values with array depth 64
 reg [31:0] w [63:0];
 reg [31:0] hv [7:0];
@@ -27,17 +28,17 @@ reg [31:0] f;
 reg [31:0] g;
 reg [31:0] h;
 
-calculate_temp1 d2(
+calculate_temp1 ctemp1(
 	.e(e),
 	.f(f),
 	.g(g),
 	.h(h),
-	.ki(k[i]),
+	.ki(k[63-i]),
 	.wi(w[i]),
 	.temp1(temp1)
 );
 
-calculate_temp2 d3(
+calculate_temp2 ctemp2(
 	.a(a),
 	.b(b),
 	.c(c),
@@ -134,14 +135,14 @@ always_ff @(posedge clk) begin
 				state <= CALC_TEMP;
 
 				// set a to h for calc_temp operations
-				a <= hv[0];
-				b <= hv[1];
-				c <= hv[2];
-				d <= hv[3];
-				e <= hv[4];
-				f <= hv[5];
-				g <= hv[6];
-				h <= hv[7];
+				a <= hv[7];
+				b <= hv[6];
+				c <= hv[5];
+				d <= hv[4];
+				e <= hv[3];
+				f <= hv[2];
+				g <= hv[1];
+				h <= hv[0];
 			end else begin
 				i <= i + 1'b1;
 			end
@@ -171,14 +172,14 @@ always_ff @(posedge clk) begin
 		end
 
 		UPDATE_HASH: begin
-			hv[0] <= hv[0] + a;
-			hv[1] <= hv[1] + b;
-			hv[2] <= hv[2] + c;
-			hv[3] <= hv[3] + d;
-			hv[4] <= hv[4] + e;
-			hv[5] <= hv[5] + f;
-			hv[6] <= hv[6] + g;
-			hv[7] <= hv[7] + h;
+			hv[0] <= hv[0] + h;
+			hv[1] <= hv[1] + g;
+			hv[2] <= hv[2] + f;
+			hv[3] <= hv[3] + e;
+			hv[4] <= hv[4] + d;
+			hv[5] <= hv[5] + c;
+			hv[6] <= hv[6] + b;
+			hv[7] <= hv[7] + a;
 
 			state <= START;
 		end
