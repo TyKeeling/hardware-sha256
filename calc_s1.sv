@@ -6,8 +6,8 @@ module calculate_s1(
 wire [31:0] t1;
 wire [31:0] t2;
 
-rightrotate r0 #(BITS=17)(.in(w_i_minus_2), .out(t1));
-rightrotate r1 #(BITS=19)(.in(w_i_minus_2), .out(t2));
+rightrotate #(.BITS(17)) r0 (.in(w_i_minus_2), .out(t1));
+rightrotate #(.BITS(19)) r1 (.in(w_i_minus_2), .out(t2));
 
 assign s1 = t1 ^ t2 ^ (w_i_minus_2 >> 10);
 

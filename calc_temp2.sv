@@ -1,13 +1,13 @@
 module calculate_temp2(
-	input logic [31:0] a, b, c
-	output [31:0] temp2
+	input logic [31:0] a, b, c,
+	output logic [31:0] temp2
 );
 
-wire [31:0] s0, maj, t1, t2, t3;
+logic [31:0] s0, maj, t1, t2, t3;
 
-rightrotate r0 #(BITS=2) (.in(a), .out(t1));
-rightrotate r1 #(BITS=13)(.in(a), .out(t2));
-rightrotate r2 #(BITS=22)(.in(a), .out(t3));
+rightrotate #(.BITS(2))  r0 (.in(a), .out(t1));
+rightrotate #(.BITS(13)) r1 (.in(a), .out(t2));
+rightrotate #(.BITS(22)) r2 (.in(a), .out(t3));
 
 always_comb begin
 	s0 = t1 ^ t2 ^ t3;
