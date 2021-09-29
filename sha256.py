@@ -99,6 +99,8 @@ ob = pre_process(bytearray(ex, encoding="utf-8"))
 print(''.join("{:02x}".format(x) for x in ob))
 l = process_chunk(hv, k, ob)
 
+print("hello world:")
+print('\n'.join("'h{:02x},".format(x) for x in bytearray(ex, encoding="utf-8")))
 
 np.set_printoptions(formatter={'int':hex})
 

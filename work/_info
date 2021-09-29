@@ -1,0 +1,217 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/altera/14.1
+vcalculate_s0
+Z0 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
+!s110 1632889882
+!i10b 1
+!s100 J4]QQX4V`e4IBG^S:@X3d2
+IG:aXFR=hHLjO:e=;729A?0
+Z1 V`JN@9S9cnhjKRR_L]QIcM3
+!s105 calc_s0_sv_unit
+S1
+Z2 dC:/Users/Tyler/Documents/hardware-sha256
+w1632816284
+8C:/Users/Tyler/Documents/hardware-sha256/calc_s0.sv
+FC:/Users/Tyler/Documents/hardware-sha256/calc_s0.sv
+L0 1
+Z3 OV;L;10.3c;59
+r1
+!s85 0
+31
+!s108 1632889882.238000
+!s107 C:/Users/Tyler/Documents/hardware-sha256/calc_s0.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Tyler/Documents/hardware-sha256/calc_s0.sv|
+!i113 1
+Z4 o-work work -sv
+vcalculate_s1
+R0
+Z5 !s110 1632887871
+!i10b 1
+!s100 `Oz1B4[<KS?C8d=Vz429d2
+IOK;]iFmTh]`b@F[IeSTOJ2
+R1
+!s105 calc_s1_sv_unit
+S1
+R2
+w1632816312
+8C:/Users/Tyler/Documents/hardware-sha256/calc_s1.sv
+FC:/Users/Tyler/Documents/hardware-sha256/calc_s1.sv
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1632887871.140000
+!s107 C:/Users/Tyler/Documents/hardware-sha256/calc_s1.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Tyler/Documents/hardware-sha256/calc_s1.sv|
+!i113 1
+R4
+vcalculate_temp1
+R0
+R5
+!i10b 1
+!s100 EDU2BKB8zBifXVEbH5Mj[2
+IT:lk:bA?o=EVC2QOff9@d1
+R1
+!s105 calc_temp1_sv_unit
+S1
+R2
+w1632816453
+8C:/Users/Tyler/Documents/hardware-sha256/calc_temp1.sv
+FC:/Users/Tyler/Documents/hardware-sha256/calc_temp1.sv
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1632887871.204000
+!s107 C:/Users/Tyler/Documents/hardware-sha256/calc_temp1.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Tyler/Documents/hardware-sha256/calc_temp1.sv|
+!i113 1
+R4
+vcalculate_temp2
+R0
+R5
+!i10b 1
+!s100 Bn8V8P^:VPMQ5=g]SG7<D2
+IVE?KzbC9[DLV49P55X2MS2
+R1
+!s105 calc_temp2_sv_unit
+S1
+R2
+w1632816516
+8C:/Users/Tyler/Documents/hardware-sha256/calc_temp2.sv
+FC:/Users/Tyler/Documents/hardware-sha256/calc_temp2.sv
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1632887871.268000
+!s107 C:/Users/Tyler/Documents/hardware-sha256/calc_temp2.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Tyler/Documents/hardware-sha256/calc_temp2.sv|
+!i113 1
+R4
+vchunk_inner_loop
+R0
+R5
+!i10b 1
+!s100 6N`_4bMzgkiSB>WHKe@>@2
+ILkHE=FB^kVGHAiT=mS:Bd2
+R1
+!s105 chunk_inner_loop_sv_unit
+S1
+R2
+w1632857000
+8C:/Users/Tyler/Documents/hardware-sha256/chunk_inner_loop.sv
+FC:/Users/Tyler/Documents/hardware-sha256/chunk_inner_loop.sv
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1632887871.329000
+!s107 C:/Users/Tyler/Documents/hardware-sha256/chunk_inner_loop.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Tyler/Documents/hardware-sha256/chunk_inner_loop.sv|
+!i113 1
+R4
+vchunk_inner_loop_tb
+R0
+R5
+!i10b 1
+!s100 AJR<Fcn`YR30i9KUT2UmN2
+IOEVE6hVogSC`gWd@hOL?d0
+R1
+!s105 chunk_inner_loop_tb_sv_unit
+S1
+R2
+w1632854815
+8C:/Users/Tyler/Documents/hardware-sha256/chunk_inner_loop_tb.sv
+FC:/Users/Tyler/Documents/hardware-sha256/chunk_inner_loop_tb.sv
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1632887871.396000
+!s107 C:/Users/Tyler/Documents/hardware-sha256/chunk_inner_loop_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Tyler/Documents/hardware-sha256/chunk_inner_loop_tb.sv|
+!i113 1
+R4
+vpreprocessor
+R0
+R5
+!i10b 1
+!s100 ^WBQ`6KZn_fOiYJBf0N3A1
+I3l5aV7Xl[O:X4;aELYb?W1
+R1
+!s105 preprocessor_sv_unit
+S1
+R2
+w1632882550
+8C:/Users/Tyler/Documents/hardware-sha256/preprocessor.sv
+FC:/Users/Tyler/Documents/hardware-sha256/preprocessor.sv
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1632887871.461000
+!s107 C:/Users/Tyler/Documents/hardware-sha256/preprocessor.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Tyler/Documents/hardware-sha256/preprocessor.sv|
+!i113 1
+R4
+vrightrotate
+R0
+R5
+!i10b 1
+!s100 XDeNQlHM^6Xa9V0g64m=<2
+Ieei^^^]njVmFG<EM4HV_L1
+R1
+!s105 rightrotate_sv_unit
+S1
+R2
+w1632815964
+8C:/Users/Tyler/Documents/hardware-sha256/rightrotate.sv
+FC:/Users/Tyler/Documents/hardware-sha256/rightrotate.sv
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1632887871.002000
+!s107 C:/Users/Tyler/Documents/hardware-sha256/rightrotate.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Tyler/Documents/hardware-sha256/rightrotate.sv|
+!i113 1
+R4
+vsha256
+R0
+R5
+!i10b 1
+!s100 6W]?=]@ACWX^bzC21HdPl2
+I<9gcHe7Led;B`L9@l2OKg0
+R1
+!s105 sha256_sv_unit
+S1
+R2
+w1632882626
+8C:/Users/Tyler/Documents/hardware-sha256/sha256.sv
+FC:/Users/Tyler/Documents/hardware-sha256/sha256.sv
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1632887871.526000
+!s107 C:/Users/Tyler/Documents/hardware-sha256/sha256.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Tyler/Documents/hardware-sha256/sha256.sv|
+!i113 1
+R4

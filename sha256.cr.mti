@@ -1,0 +1,57 @@
+C:/Users/Tyler/Documents/hardware-sha256/sha256.sv {1 {vlog -work work -sv -stats=none C:/Users/Tyler/Documents/hardware-sha256/sha256.sv
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module sha256
+
+Top level modules:
+	sha256
+
+} {} {}} C:/Users/Tyler/Documents/hardware-sha256/chunk_inner_loop.sv {1 {vlog -work work -sv -stats=none C:/Users/Tyler/Documents/hardware-sha256/chunk_inner_loop.sv
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module chunk_inner_loop
+
+Top level modules:
+	chunk_inner_loop
+
+} {} {}} C:/Users/Tyler/Documents/hardware-sha256/rightrotate.sv {1 {vlog -work work -sv -stats=none C:/Users/Tyler/Documents/hardware-sha256/rightrotate.sv
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module rightrotate
+
+Top level modules:
+	rightrotate
+
+} {} {}} C:/Users/Tyler/Documents/hardware-sha256/calc_s0.sv {1 {vlog -work work -sv -stats=none C:/Users/Tyler/Documents/hardware-sha256/calc_s0.sv
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module calculate_s0
+
+Top level modules:
+	calculate_s0
+
+} {} {}} C:/Users/Tyler/Documents/hardware-sha256/calc_temp1.sv {1 {vlog -work work -sv -stats=none C:/Users/Tyler/Documents/hardware-sha256/calc_temp1.sv
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module calculate_temp1
+
+Top level modules:
+	calculate_temp1
+
+} {} {}} C:/Users/Tyler/Documents/hardware-sha256/calc_s1.sv {1 {vlog -work work -sv -stats=none C:/Users/Tyler/Documents/hardware-sha256/calc_s1.sv
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module calculate_s1
+
+Top level modules:
+	calculate_s1
+
+} {} {}} C:/Users/Tyler/Documents/hardware-sha256/calc_temp2.sv {1 {vlog -work work -sv -stats=none C:/Users/Tyler/Documents/hardware-sha256/calc_temp2.sv
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module calculate_temp2
+
+Top level modules:
+	calculate_temp2
+
+} {} {}} C:/Users/Tyler/Documents/hardware-sha256/preprocessor.sv {1 {vlog -work work -sv -stats=none C:/Users/Tyler/Documents/hardware-sha256/preprocessor.sv
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module preprocessor
+
+Top level modules:
+	preprocessor
+
+} {} {}}
